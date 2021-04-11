@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-md-12 top-div" style="margin-top:40px;">
+      <h1 style="color:white;text-align:center;background: linear-gradient(141deg,#056b5b 35%,#9dd85c 103%);">Authorities For Your Area</h1>
+    </div>
+  </div>
+  <div class="row">
+    {% for authority in authorities %}
+    <div class="col-md-6">
+      <div class="card" style="width: 45rem;margin-top:10px;font-size:2rem">
+        <div class="card-body">
+          <h3 class="card-title" data-toggle="modal" data-target="#{{authority.id}}"><b>{{authority.name}}</b></h3>
+          <p>Phone Number: {{authority.contact}}</p>
+          <p>Address: {{authority.address}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
