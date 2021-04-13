@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
             name='Profile',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('avatar', models.ImageField(upload_to='avatars/')),
+                ('avatar', models.ImageField(upload_to='profile/')),
                 ('description', tinymce.models.HTMLField()),
                 ('name', models.CharField(max_length=100)),
                 ('email', models.EmailField(max_length=254)),
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
                 ('image', models.ImageField(upload_to='post/')),
                 ('post', tinymce.models.HTMLField()),
                 ('post_date', models.DateTimeField(auto_now_add=True)),
-                ('avatar', models.ImageField(upload_to='avatars/')),
+                ('avatar', models.ImageField(upload_to='profile/')),
                 ('neighbourhood', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='amos.neighbourhood')),
                 ('username', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
@@ -51,7 +51,7 @@ class Migration(migrations.Migration):
             name='Health',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('logo', models.ImageField(upload_to='healthlogo/')),
+                ('logo', models.ImageField(upload_to='hospital/')),
                 ('name', models.CharField(max_length=100)),
                 ('email', models.EmailField(max_length=254)),
                 ('contact', models.IntegerField()),

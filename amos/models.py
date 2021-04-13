@@ -20,7 +20,7 @@ class neighbourhood(models.Model):
         cls.objects.filter(neighbourhood=neighbourhood).delete()
 
 class Profile(models.Model):
-    avatar = models.ImageField(upload_to='avatars/')
+    avatar = models.ImageField(upload_to='profile/')
     description = HTMLField()
     neighbourhood = models.ForeignKey(neighbourhood,on_delete=models.CASCADE)
     username = models.ForeignKey(User,on_delete=models.CASCADE)
@@ -42,7 +42,7 @@ class Authorities(models.Model):
        
 
 class Health(models.Model):
-    logo = models.ImageField(upload_to='healthlogo/')
+    logo = models.ImageField(upload_to='hospital/')
     neighbourhood = models.ForeignKey(neighbourhood,on_delete=models.CASCADE)
     name =models.CharField(max_length=100)
     email = models.EmailField()
@@ -60,7 +60,7 @@ class Post(models.Model):
     username = models.ForeignKey(User,on_delete=models.CASCADE)
     neighbourhood= models.ForeignKey(neighbourhood,on_delete=models.CASCADE)
     post_date = models.DateTimeField(auto_now_add=True)
-    avatar = models.ImageField(upload_to='avatars/')
+    avatar = models.ImageField(upload_to='profile/')
 
     def __str__(self):
         return self.title    
