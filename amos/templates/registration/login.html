@@ -3,53 +3,86 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
-    <!-- Empty div -->
+<div>
+    <style>
+        body {
+            background-image: url('https://www.maypm.com/wp-content/uploads/2016/03/neighborhood-background-hero.jpg');
+        }
+    </style><br>
+    <div class="container" style="text-align: center;">
+        <h1>WELCOME TO NEIGHBOURHOOD APP</h1>
+        <p>"The main objective for me is security, I do not want to have to answer to my neighbors." <br>~ Evans
+        </p>
+        <p>Please Login to dive into our neighborhood!</p>
+    </div><br><br>
+    <div class="container">
+        <div class="row">
 
-    <div class="col-md-4 phone-section">
-    </div>
+            <div class="col-md-4 phone-section">
+            </div>
 
 
 
-    <div class="col-md-4 form-section">
+            <div class="col-md-4 form-section">
 
-      {% if form.errors %}
-        <p>Password or Username is incorrect</p>
-      {% endif %}
+                {% if form.errors %}
+                <p>Password or Username is incorrect</p>
+                {% endif %}
 
-      <div class="panel panel-default" style="margin-top:80px;">
+                <div class="panel panel-default" style="margin-top:80px;">
 
-        <div class="panel-body">
+                    <div class="panel-body">
 
-          <div class="text-center">
-          <form action="/accounts/login/" method="post">
+                        <div class="text-center">
+                            <form action="/accounts/login/" method="post">
 
-            {% csrf_token%}
-            {% bootstrap_form form %}
+                                {% csrf_token%}
+                                {% bootstrap_form form %}
 
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary login-button" value="Log in">
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-primary login-button" value="Log in">
+
+                                </div>
+                                <input type="hidden" name="next" value="/">
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-body text-center">
+                        <p> Don't have an account? <span><a class="" href="/accounts/register">Sign Up</a></span></p>
+                    </div>
+                </div>
 
             </div>
-            <input type="hidden" name="next" value="/">
-
-          </form>
+            <div class="col-md-4"></div>
         </div>
-        </div>
-
-      </div>
-
-      <div class="panel panel-default">
-        <div class="panel-body text-center">
-          <p> Don't have  an account? <span><a class="" href="/accounts/register">Sign Up</a></span></p>
-        </div>
-      </div>
 
     </div>
-    <!-- Empty div -->
-    <div class="col-md-4"></div>
-  </div>
+</div> <br><br>
+<div style="background-color:rgb(21, 23, 24);">
+    <footer>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <div class="container" style="display: inline-flex;margin-left: 45%;;">
+            <p style="padding-right: 3rem;">
+                <a href="https://www.facebook.com/Anthony Martial Sanji" class="fa fa-facebook"></a>
+            </p>
+            <p class="list-inline-item" style="padding-right: 3rem;">
+                <a href="https://github.com/amoskipz" class="fa fa-github"></a>
+            </p>
+            <p class="list-inline-item">
+                <a href="https://twitter.com/kiprotich Amos koech" class="fa fa-twitter"></a>
+            </p>
+        </div>
 
+        <div class="footer-copyright text-center" style="text-align: center;color: white;">© 2021 Copyright:
+            <a href="https://github.com/amoskipz/Neighbourhood-website" style="color: red;">Kiprotich Amos Koech </a>
+        </div>
+
+    </footer><br>
 </div>
 {% endblock %}
